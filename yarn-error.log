@@ -1,0 +1,45 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\MARCH3\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\MARCH3\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Users\MARCH3\AppData\Local\Microsoft\WindowsApps;C:\Users\MARCH3\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\MARCH3\AppData\Roaming\npm;C:\Users\MARCH3\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.15.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: 1980:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:c:\ws\deps\openssl\openssl\ssl\record\ssl3_record.c:308:
+
+npm manifest: 
+  {
+     "name": "quicktypeorm",
+     "version": "0.0.1",
+     "description": "Awesome project developed with TypeORM.",
+     "devDependencies": {
+        "ts-node": "3.3.0",
+        "@types/node": "^8.0.29",
+        "typescript": "3.3.3333"
+     },
+     "dependencies": {
+        "typeorm": "0.2.29",
+        "reflect-metadata": "^0.1.10",
+        "mysql": "^2.14.1"
+     },
+     "scripts": {
+        "start": "ts-node src/index.ts",
+        "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/index.ts"
+  
+     }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

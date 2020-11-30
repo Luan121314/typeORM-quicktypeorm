@@ -1,0 +1,24 @@
+{
+   "type": "mysql",
+   "host": "localhost",
+   "port": 3306,
+   "username": "root",
+   "password": "",
+   "database": "michelangelo",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      "src/models/**/*.ts"
+   ],
+   "migrations": [
+      "src/config/database/migration/**/*.ts"
+   ],
+   "subscribers": [
+      "src/config/database/subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/config/database/models",
+      "migrationsDir": "src/config/database/migration",
+      "subscribersDir": "src/config/database/subscriber"
+   }
+}
