@@ -1,17 +1,17 @@
 import { Request, Response } from 'express';
 import {  getRepository } from 'typeorm';
-import Student from '../models/Student';
+import Lesson from '../models/Lesson';
 
 
 export default {
     async create(request: Request, response: Response) {
 
         try {
-            const studentRepository = getRepository(Student);
+            const lessonRepository = getRepository(Lesson);
 
-            const studentSave = await studentRepository.save(request.body);
+            const lessonSave = await lessonRepository.save(request.body);
 
-            return response.status(201).json(studentSave);
+            return response.status(201).json(lessonSave);
 
         } catch (error) {
             console.log('err.message', error.message);
@@ -19,16 +19,16 @@ export default {
         }
     },
     async index(request: Request, response: Response) {
-        const studentRepository = getRepository(Student);
-        const students = await studentRepository.find();
-        response.json(students);
+        const lessonRepository = getRepository(Lesson);
+        const lessons = await lessonRepository.find();
+        response.json(lessons);
     },
     async show(request: Request, response: Response) {
         const { name } = request.params
         try {
-            const studentRepository = getRepository(Student);
-            const student = await studentRepository.find({where: {name}})
-            response.json(student); 
+            const lessonRepository = getRepository(Lesson);
+            const lesson = await lessonRepository.find({where: {name}})
+            response.json(lesson); 
 
         } catch (error) {
             console.log('err.message', error.message);

@@ -1,22 +1,20 @@
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
-import Class from "./Class";
+import {Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import Lesson from "./Lesson";
 
 @Entity()
-
-export default class Student{
-
+export default class Class {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column()
     name: string;
 
-    @Column()
-    key:  number;
+    @OneToMany(type => Lesson, classe => Class)
+    lessons: Lesson[];
 
-    @ManyToMany(type => Class)
-    @JoinTable()
-    classes: Class;
+
+    @Column()
+    duration: number;
 
     @Column({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
     created_at:Date;
