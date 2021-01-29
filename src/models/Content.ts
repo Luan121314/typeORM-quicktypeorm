@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import Lesson from './Lesson';
 
 @Entity()
@@ -18,10 +18,10 @@ export default class Content{
     @Column()
     linkContent: string;
 
-    @Column({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
+    @CreateDateColumn({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
     created_at:Date;
 
-    @Column({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
+    @UpdateDateColumn({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
     updated_at: Date;
 
 

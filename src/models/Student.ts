@@ -1,4 +1,4 @@
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import Class from "./Class";
 
 @Entity()
@@ -18,10 +18,10 @@ export default class Student{
     @JoinTable()
     classes: Class;
 
-    @Column({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
+    @CreateDateColumn({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
     created_at:Date;
 
-    @Column({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
+    @UpdateDateColumn({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
     updated_at: Date;
 
 

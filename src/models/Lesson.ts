@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToOne, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import Class from "./Class";
 import Content from "./Content";
 
@@ -19,10 +19,10 @@ export default class Lesson{
     })
     classe: Class
 
-    @Column({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
+    @CreateDateColumn({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
     created_at:Date;
 
-    @Column({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
+    @UpdateDateColumn({type: 'timestamp', default: ()=> "CURRENT_TIMESTAMP"})
     updated_at: Date;
 
 
